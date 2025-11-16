@@ -1,0 +1,10 @@
+def pad_str(strings):
+    max_len = max(len(s) for s in strings)
+    
+    padded_str = [s.ljust(max_len, '_') for s in strings]
+    return padded_str
+    
+input_str = ["time", "world", "system", "law", "community"]
+output_str = pad_str(input_str)
+
+print(output_str)
