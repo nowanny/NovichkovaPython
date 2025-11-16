@@ -1,0 +1,9 @@
+string = "октмаопывп"
+letter = "п"
+first_index = string.find(letter)
+last_index = string.rfind(letter)
+if first_index == -1:
+    print("буквы нет в строке")
+else:
+    print(f"первое вхождение буквы '{letter}': {first_index}")
+    print(f"последнее вхождение буквы '{letter}': {last_index}")
