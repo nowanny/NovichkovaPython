@@ -1,0 +1,12 @@
+tuple_1 = (2, 1, 13, 6, 7, 20)
+tuple_2 = (7, 21, 2, 'e', 9, 'r')
+
+def sort_tuple(input_tuple):
+    if all(isinstance(x, int) for x in input_tuple):
+        sorted_tuple = tuple(sorted(input_tuple))
+        return sorted_tuple
+    else:
+        return input_tuple
+
+print(sort_tuple(tuple_1))
+print(sort_tuple(tuple_2))  
