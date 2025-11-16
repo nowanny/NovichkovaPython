@@ -1,0 +1,14 @@
+from collections.abc import Hashable
+
+data_list = [7, 12, 5, [8, 0], (13, 8), "film", None, {8: 'val'}, 4.3]
+
+def convert(data):
+    elements = set()
+    for num in data:
+        if isinstance(num, Hashable):
+            elements.add(num)
+    return elements
+
+res = convert(data_list)
+
+print("множество:", res)
