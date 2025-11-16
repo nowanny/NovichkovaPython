@@ -1,0 +1,6 @@
+from collections import Counter
+string = "введите текст: "
+str_without_spaces = text.replace(" ", "")
+count = Counter(str_without_spaces)
+most_common = counter.most_common(3)
+print(', '.join([f"{char} - {count}" for char, count in most_common]))
