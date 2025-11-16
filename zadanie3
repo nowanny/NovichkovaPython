@@ -1,0 +1,12 @@
+str_num = "2 3 4 5 3 4 6 8"
+list_num = [1, 2, 3, 4, 2, 3]
+
+def convert(data):
+    elements = set(data)
+    print("множество:", elements)
+    print("мощность множества:", len(elements))
+
+
+str_to_list = list(map(int, str_num.split()))
+convert(str_to_list)
+convert(list_num)
