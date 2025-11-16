@@ -1,0 +1,10 @@
+team = "Динамо"
+print(team, " - чемпион")
+
+print('-' * len(team))
+
+lower_team = name_team.lower()
+print(len(lower_team))
+
+print('п' in lower_team)
+print(lower_team.count('а'))
