@@ -1,0 +1,25 @@
+input_tuple1 = (2, 3, 4, 5, 3, 6, 7)
+element1 = 3
+input_tuple2 = (2, 3, 4, 5, 3, 6, 7)
+element2 = 6
+
+def extract_tuple(input_tuple, element):
+    index1 = -1
+    index2 = -1
+    
+    for index, value in enumerate(input_tuple):
+        if value == element:
+            if index1 == -1:
+                index1 = index  
+            elif index2 == -1:
+                index2 = index  
+                break 
+    if index1 == -1:
+        return ()
+    elif index2 == -1:
+        return input_tuple[index1:]
+    else:
+        return input_tuple[index1:index2 + 1]
+
+print(extract_tuple(input_tuple1, element1)) 
+print(extract_tuple(input_tuple2, element2)) 
