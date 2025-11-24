@@ -1,0 +1,12 @@
+a = 2
+b = 9
+
+minim = min(a, b)
+maxim = max(a, b)
+
+for i in range(minim, maxim + 1):
+    print(i, end=' ')
+print()  
+
+for i in range(maxim, minim - 1, -1):
+    print(i)
