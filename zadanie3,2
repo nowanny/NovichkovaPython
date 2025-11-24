@@ -1,0 +1,9 @@
+p = 27
+weights = [2, 3, 8, 5, 1]
+
+sum_weight = sum(weights)
+
+if sum_weight <= p:
+    print("Перевозка груза возможна. Общий вес:", sum_weight)
+else:
+    print("Перевозка груза невозможна. Общий вес:", sum_weight)
