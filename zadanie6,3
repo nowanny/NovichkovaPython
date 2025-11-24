@@ -1,0 +1,10 @@
+sentence = input("введите предложение: ")
+letter = input("введите букву для удаления: ").lower()
+
+words = sentence.split()
+
+filter_words = [word for word in words if letter not in word.lower()]
+
+sentence_final = ' '.join(filter_words)
+
+print("финальное предложение:", sentence_final)
