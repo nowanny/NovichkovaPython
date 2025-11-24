@@ -1,0 +1,30 @@
+n = 5
+nums = [5.7, 2.4, -6.2, 9.82, -7.12]
+
+pos_nums = [num for num in nums if num > 0]
+
+neg_nums = []
+for num in nums:
+    if num < 0:
+        neg_nums.append(num)
+
+if pos_nums:
+    avg_pos = sum(pos_nums) / len(pos_nums)
+else:
+    avg_pos = 0
+    
+import math
+
+if neg_nums:
+    prod_neg = 1
+    for num in neg_nums:
+        prod_neg *= num
+    geom_avg_neg = math.pow(abs(prod_neg), 1 / len(neg_nums))
+else:
+    geom_avg_neg = 0
+
+print("исходный список:", nums)
+print("положительные числа:", pos_nums)
+print("отрицательные числа:", neg_nums)
+print("среднее арифметическое положительных: {:.2f}".format(avg_pos))
+print("среднее геометрическое отрицательных: {:.2f}".format(geom_avg_neg))
