@@ -1,0 +1,10 @@
+a = 25
+b = 67
+c = 3
+
+res = []
+for num in range(a, b + 1):
+    if num % c == 0:
+        res.append(num)
+
+print("Числа от", a, "до", b, "кратные", c, res)
