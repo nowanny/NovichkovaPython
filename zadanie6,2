@@ -1,0 +1,58 @@
+nums = [int(x) for x in input("Введите целые числа через пробел: ").split()]
+print("Исходный список:", nums)
+
+#способ 1
+all_posit_1 = True
+for num in nums:
+    if num <= 0:
+        all_posit_1 = False
+        break
+
+#способ 2
+all_posit_2 = all(num > 0 for num in nums)
+
+print(f"Все элементы положительные?")
+print(f"способ 1: {all_posit_1}")
+print(f"способ 2: {all_posit_2}")
+
+#способ 1
+zero_1 = False
+for num in nums:
+    if num == 0:
+        zero_1 = True
+        break
+
+#способ 2
+zero_2 = any(num == 0 for num in nums)
+
+print(f"Есть ли нулевой элемент?")
+print(f"способ 1: {zero_1}")
+print(f"способ 2: {zero_2}")
+
+#способ 1
+even_1 = True
+for num in nums:
+    if num % 2 != 0:
+        even_1 = False
+        break
+
+#способ 2
+even_2 = all(num % 2 == 0 for num in nums)
+
+print(f"Все элементы четные?")
+print(f"способ 1: {even_1}")
+print(f"способ 2: {even_2}")
+
+#способ 1
+odd_1 = False
+for num in nums:
+    if num % 2 != 0:
+        odd_1 = True
+        break
+
+#способ 2
+odd_2 = any(num % 2 != 0 for num in nums)
+
+print(f"Есть ли нечетный элемент?")
+print(f"способ 1: {odd_1}")
+print(f"способ 2: {odd_2}")
