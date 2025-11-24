@@ -1,0 +1,12 @@
+summ = 0
+count = 0
+
+while True:
+    num = int(input("Введите целое число (0 для завершения): "))
+    if num == 0:
+        break
+    summ += num
+    count += 1
+
+print("Сумма введенных чисел:", summ)
+print("Количество введенных чисел:", cou
