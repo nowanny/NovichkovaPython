@@ -1,0 +1,31 @@
+def common_middle():
+    try:
+        n = int(input("Введите кол-во человек: "))
+        if n <= 0:
+            raise ValueError("Количество человек должно быть положительным.")
+
+        middle_names = {}
+        for i in range(n):
+            fio = input("Введите ФИО через пробел: ").split()
+            if len(fio) < 3:
+                print("Ошибка: Введено неполное ФИО. Человек не учитывается в подсчете.")
+                continue
+            
+            middle_name = fio[2]
+            middle_names[middle_name] = middle_names.get(middle_name, 0) + 1
+
+        if not middle_names:
+            print("Нет отчеств для учета.")
+            return
+
+        common = sorted(middle_names.items(), key=lambda item: item[1])[-1][0]
+        print(f"Наиболее часто встречаемое отчество: {common}")
+        print("В расчете участвовало человек:", n)
+
+    except ValueError as ve:
+        print(f"Ошибка ввода: {ve}")
+    except Exception as e:
+        print(f"Произошла непредвиденная ошибка: {e}")
+
+if __name__ == "__main__":
+    common_middle()
