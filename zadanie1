@@ -1,0 +1,28 @@
+def ceasar(text, shift):
+    """Вернуть измененную строку 'text' со сдвигом 'shift'.
+    Параметры:
+    - text (str): строка;
+    - shift (int): сдвиг.
+    Результат:
+    str: измененная строка."""
+    
+    letters = [chr(i) for i in range(ord('а'), ord('я') + 1)] + [chr(i) for i in range(ord('А'), ord('Я') + 1)]
+
+    letter_index = {letter: index for index, letter in enumerate(letters)}
+    
+    def shift_letter(letter, shift):
+        if letter in letter_index:
+            index = letter_index[letter]
+            new_index = (index + shift) % len(letters)
+            return letters[new_index]
+        return letter  
+
+    encoded = ''.join(shift_letter(char, shift) for char in text)
+    decoded = ''.join(shift_letter(char, -shift) for char in encoded)
+
+    print("Зашифрованная строка:", encoded)
+    print("Расшифрованная строка:", decoded)
+
+text_example = input("Введите предложение: ")
+shift_example = int(input("Введите сдвиг: "))
+ceasar(text_example, shift_example)
