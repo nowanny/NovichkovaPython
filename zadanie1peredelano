@@ -1,0 +1,44 @@
+def ceasar(text, shift):
+    """Вернуть измененную строку 'text' со сдвигом 'shift'.
+    Параметры:
+    - text (str): строка;
+    - shift (int): сдвиг.
+    Результат:
+    str: измененная строка."""
+    
+    try:
+        if not text:
+            raise ValueError("Входной текст не должен быть пустым.")
+
+        letters = [chr(i) for i in range(ord('а'), ord('я') + 1)] + [chr(i) for i in range(ord('А'), ord('Я') + 1)]
+        
+        letter_index = {letter: index for index, letter in enumerate(letters)}
+
+        def shift_letter(letter, shift):
+            if letter in letter_index:
+                index = letter_index[letter]
+                new_index = (index + shift) % len(letters)
+                return letters[new_index]
+            return letter  
+            
+        encoded = ''.join(shift_letter(char, shift) for char in text)
+        decoded = ''.join(shift_letter(char, -shift) for char in encoded)
+
+        print("Зашифрованная строка:", encoded)
+        print("Расшифрованная строка:", decoded)
+
+    except ValueError as ve:
+        print(f"Ошибка: {ve}")
+    except TypeError:
+        print("Ошибка: Сдвиг должен быть целым числом.")
+    except Exception as e:
+        print(f"Произошла непредвиденная ошибка: {e}")
+
+if __name__ == "__main__":
+    try:
+        input_text = input("Введите предложение: ")
+        input_shift = int(input("Введите сдвиг: ")) 
+        ceasar(input_text, input_shift)
+    except ValueError:
+        print("Ошибка: Сдвиг должен быть целым числом.")
+
