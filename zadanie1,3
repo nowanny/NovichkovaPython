@@ -1,0 +1,16 @@
+f = open('num_1_1.txt', 'r') 
+n = []
+for i in f:
+    try:
+        n.append(int(i.strip()))
+    except ValueError:
+        continue
+f.close()
+
+summ = str(sum(n))
+maximum = str(max(n))
+
+f = open('num_1_1.txt', 'a') 
+f.write(summ + "\n")
+f.write(maximum + "\n")
+f.close()
