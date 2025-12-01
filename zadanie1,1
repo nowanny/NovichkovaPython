@@ -1,0 +1,7 @@
+num = input()
+num = num.split()
+
+f = open('num_1_1.txt', 'w') 
+    for i in num:
+        file.write(i + '\n')
+f.close()
